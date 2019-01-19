@@ -1,0 +1,13 @@
+<% content_for(:title) { 'Новая компания' } %>
+
+<%= form_for @company, html: { class: 'form' } do |form| %>
+  <label>
+    <span class="form__label-text">
+      Название <%= required_field %>
+    </span>
+
+    <%= form.text_field :name %>
+  </label>
+
+  <%= form.submit 'Готово' %>
+<% end %>

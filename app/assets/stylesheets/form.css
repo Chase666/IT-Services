@@ -1,0 +1,54 @@
+.form {
+    width: 60%;
+}
+
+.form__label-text {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: gray;
+    letter-spacing: 1px;
+}
+
+.form__asterisk {
+    color: red;
+    font-size: 1.1em;
+}
+
+.form input {
+    font-size: inherit !important;
+    box-sizing: border-box;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.form input[type="text"] {
+    border: 1px solid #c4c5c8;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+}
+
+/* Автоматически добавляемый класс Rails */
+.field_with_errors input[type="text"] {
+    border: 1px solid red;
+}
+
+.form input[type="submit"] {
+    cursor: pointer;
+    color: #10ac84;
+    padding: 15px 30px;
+    border: 1px solid #10ac84;
+    background-color: transparent;
+    float: right;
+    transition: background 100ms;
+    text-transform: uppercase;
+    font-size: 0.8em !important;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.form input[type="submit"]:hover {
+    background: #10ac84;
+    color: white;
+}

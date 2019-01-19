@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="nav">
+      <ul>
+        <li><%= link_to 'Главная', root_path %></li>
+        <li><%= link_to 'Поиск', search_path %></li>
+        <li><%= link_to 'О проекте', about_path %></li>
+
+        <li><%= link_to 'Новая компания', new_company_path %></li>
+        <li><%= link_to 'Новая категория', new_category_path %></li>
+        <li><%= link_to 'Новый курс', new_course_path %></li>
+      </ul>
+    </div>
+
+    <div id="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

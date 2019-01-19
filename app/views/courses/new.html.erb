@@ -1,0 +1,45 @@
+<% content_for(:title) { 'Новый курс' } %>
+
+<%= form_for @course, html: { class: 'form' } do |form| %>
+  <label>
+    <span class="form__label-text">
+      Название <%= required_field %>
+    </span>
+
+    <%= form.text_field :name %>
+  </label>
+
+  <label>
+    <span class="form__label-text">
+      Краткое описание <%= required_field %>
+    </span>
+
+    <%= form.text_field :short_description %>
+  </label>
+
+  <label>
+    <span class="form__label-text">
+      Развернутое описание <%= required_field %>
+    </span>
+
+    <%= form.text_field :long_description %>
+  </label>
+
+  <label>
+    <span class="form__label-text">
+      Цена <%= required_field %>
+    </span>
+
+    <%= form.text_field :price %>
+  </label>
+
+  <label>
+    <span class="form__label-text">
+      Местоположение <%= required_field %>
+    </span>
+
+    <%= form.text_field :location %>
+  </label>
+
+  <%= form.submit 'Готово' %>
+<% end %>
