@@ -1,0 +1,10 @@
+<div class="form-style-8">
+  <h2>Создать новый курс</h2>
+  <%= form_for :course, url: new_course_path do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Описание<%= form.text_field :info %></p>
+    <p>Цена<%= form.text_field :price %></p>
+    <p>Кол-во уроков<%= form.text_field :total_lessons %></p>
+    <%= form.submit %>
+  <% end %>
+</div>

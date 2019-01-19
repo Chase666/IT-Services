@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Itservice</title>
+    <title>IT-Services</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+  <ul class="tab">
+    <li><%=link_to 'На основную страницу', root_path %></li>
+    <li><%=link_to 'Новое направление', new_subject_path %></li>
+    <li><%=link_to 'Все направления', subjects_path %></li>
+    <li><%=link_to 'Все курсы', courses_path %></li>
+    <li><%=link_to 'Новый курс', new_course_path %></li>
+    <li><%=link_to 'Новая компания', new_company_path %></li>
+    <li><%=link_to 'Все компании', companies_path %></li>
+    <li><%=link_to 'О проэкте', '/about' %></li>
+  </ul>
+  <%= yield %>
   </body>
 </html>

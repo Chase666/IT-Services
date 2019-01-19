@@ -1,0 +1,13 @@
+<h1>Все компании</h1>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Год основания</th>
+  </tr>
+  <% @company.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.foundation_year%></td>
+    </tr>
+  <% end %>
+</table>

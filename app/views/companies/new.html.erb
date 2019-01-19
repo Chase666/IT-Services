@@ -1,0 +1,8 @@
+<div class="form-style-8">
+  <h2>Добавить новую компанию</h2>
+  <%= form_for :company, url: new_company_path do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Год основания<%= form.text_field :foundation_year %></p>
+    <%= form.submit %>
+  <% end %>
+</div>

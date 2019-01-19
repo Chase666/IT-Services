@@ -1,0 +1,13 @@
+<h1>Все направления</h1>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Информация</th>
+  </tr>
+  <% @subject.each do |f| %>
+    <tr>
+      <td> <%= f.name %> </td>
+      <td> <%=f.description%></td>
+    </tr>
+  <% end %>
+</table>
