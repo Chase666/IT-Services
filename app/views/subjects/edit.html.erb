@@ -1,0 +1,10 @@
+<div class="form-style-8">
+  <h2>Редактировать направление</h2>
+  <%= form_for(@subject)do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Описание<%= form.text_field :description %></p>
+    <p>Фотография</p>
+    <p><%= form.file_field :avatar %></p>
+    <%= form.submit %>
+  <% end %>
+</div>

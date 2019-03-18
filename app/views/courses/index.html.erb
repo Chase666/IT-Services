@@ -1,0 +1,10 @@
+<h1>Все курсы</h1>
+<% @course.each do |f| %>
+  <div class="card" style="width: 24.5rem;">
+    <div class="card-body">
+      <p class="card-text"><%= link_to f.name,course_path(f)%></p>
+      <p class="card-text">Цена: <%= f.price%>₽</p>
+    </div>
+  </div>
+<% end %>
+

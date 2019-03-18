@@ -1,0 +1,9 @@
+<h1>Все направления</h1>
+<% @subject.each do |f| %>
+  <div class="card" style="width: 24.5rem;">
+    <div class="card-body">
+      <p class="card-text"><%= link_to f.name,subject_path(f)%></p>
+      <p class="card-text"><%= f.description%></p>
+    </div>
+  </div>
+<% end %>

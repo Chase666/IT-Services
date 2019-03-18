@@ -1,0 +1,24 @@
+<p> </p>
+<div class="card" style="width: 30.5rem;">
+  <div class="card-body">
+    <h4 class="card-title"><%= @company.name%></h4>
+    <p class="card-text"><%= @company.description %></p>
+    <p class="card-text">Год основания: <%= @company.foundation_year.to_s %></p>
+    <p class="card-text">Телефон компании: +<%= @company.phone.to_s %></p>
+    <p class="card-text">Почта компании: <%= @company.email %></p>
+    <p class="card-text">Организация: <%= @company.organization_name %></p>
+    <p class="card-text">Веб-сайт: <%= @company.website %></p>
+    <a href="<%= edit_company_url(@company.id) %>" class="card-link">Edit</a>
+    <a class="card-link"><%= link_to  "Delete", company_path(@company.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить компанию?'} %></a>
+  </div>
+</div>
+<p> </p>
+<h4 class="cntrd">Все курсы компании</h4>
+<% @company_courses.each do |f| %>
+  <div class="card" style="width: 24.5rem;">
+    <div class="card-body">
+      <p class="card-text"><%= link_to f.name,course_path(f)%></p>
+      <p class="card-text">Цена: <%= f.price%>₽</p>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="form-style-8">
+  <h2>Добавить новую компанию</h2>
+  <%= form_for :company, url: new_company_path do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Год основания<%= form.text_field :foundation_year %></p>
+    <p>Описание<%= form.text_field :description %></p>
+    <p>Телефон<%= form.text_field :phone %></p>
+    <p>Почта<%= form.text_field :email %></p>
+    <p>Веб-сайт<%= form.text_field :website %></p>
+    <p>Название организации<%= form.text_field :organization_name %></p>
+    <%= form.submit "Создать компанию" %>
+  <% end %>
+</div>

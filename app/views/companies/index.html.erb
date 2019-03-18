@@ -1,0 +1,9 @@
+<h1>Все компании</h1>
+<% @company.each do |e| %>
+  <div class="card" style="width: 24.5rem;">
+    <div class="card-body">
+      <p class="card-text"><%= link_to e.name,company_path(e)%></p>
+      <p class="card-text">Год основания: <%= e.foundation_year%>₽</p>
+    </div>
+  </div>
+<% end %>
