@@ -15,6 +15,7 @@ class CoursesController < ApplicationController
   end
   def index
     @course = Course.all
+    @courses = Course.order(:name).page params[:page]
   end
   def show
     @course = Course.find_by(id: params[:id])
