@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
     @company = Company.new
   end
   def index
-    @company = Company.all
+    @companies = Company.all.paginate(:page => params[:page],per_page:1)
   end
   def show
     @company = Company.find_by(id: params[:id])

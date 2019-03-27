@@ -1,9 +1,12 @@
 <h1>Все направления</h1>
-<% @subject.each do |f| %>
+<% @subjects.each do |subject| %>
   <div class="card" style="width: 24.5rem;">
     <div class="card-body">
-      <p class="card-text"><%= link_to f.name,subject_path(f)%></p>
-      <p class="card-text"><%= f.description%></p>
+      <p class="card-text"><%= link_to subject.name,subject_path(subject)%></p>
+      <p class="card-text"><%= subject.description%></p>
     </div>
   </div>
 <% end %>
+<div class="pagination justify-content-center">
+  <%= will_paginate @subjects,renderer:  WillPaginate::ActionView::BootstrapLinkRenderer,previous_label: '<',next_label: '>',inner_window: 1,outer_window:0%>
+</div>

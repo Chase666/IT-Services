@@ -13,7 +13,7 @@ class SubjectsController < ApplicationController
       @subject = Subject.new
     end
     def index
-    @subject = Subject.all
+      @subjects = Subject.all.paginate(:page => params[:page],per_page:1)
     end
     def show
       @subject = Subject.find_by(id: params[:id])

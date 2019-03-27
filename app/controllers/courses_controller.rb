@@ -14,8 +14,7 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
   def index
-    @course = Course.all
-    @courses = Course.order(:name).page params[:page]
+    @courses = Course.all.paginate(:page => params[:page],per_page:1)
   end
   def show
     @course = Course.find_by(id: params[:id])
