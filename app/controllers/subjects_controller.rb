@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
       if @subject.errors.any?
         render 'new'
       else
-        redirect_to subject_path
+        redirect_to @subject
       end
     end
 
@@ -31,7 +31,7 @@ class SubjectsController < ApplicationController
       if @subject.errors.any?
         render 'edit'
       else
-        redirect_to subject_path
+        redirect_to subjects_path
       end
     end
     def delete

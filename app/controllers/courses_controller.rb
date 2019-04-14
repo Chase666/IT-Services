@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
     if @course.errors.any?
       render :'courses/new'
     else
-      redirect_to root_path
+      redirect_to @course
     end
   end
 
