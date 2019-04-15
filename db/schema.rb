@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_103103) do
+ActiveRecord::Schema.define(version: 2019_04_15_183557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_03_10_103103) do
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "phone"
+    t.bigint "phone"
     t.string "email"
     t.string "description"
     t.string "organization_name"
