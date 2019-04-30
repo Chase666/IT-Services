@@ -1,15 +1,15 @@
 <p> </p>
 <div class="card" style="width: 21rem;">
   <div class="card-body">
-    <h4 class="card-title">О кусре</h4>
+    <h4 class="card-title">О курсе</h4>
     <p class="card-text">Название курса:</p>
     <p class="card-text"><%=@course.name%></p>
     <p class="card-text">Информация о курсе:</p>
     <p class="card-text"><%= @course.info%></p>
     <p class="card-text">Общее количество уроков: <%= @course.total_lessons%></p>
-    <p class="card-text">Цена курса: <%= @course.price%></p>
-    <p class="card-text">Компания: <%= @course.company.name%></p>
-    <p class="card-text">Направление: <%= @course.subject.name%></p>
+    <p class="card-text">Цена курса: <%= @course.price%>₽</p>
+    <p class="card-text">Компания: <%= link_to  "#{@course.company.name}",company_path(@course.company.id)%></p>
+    <p class="card-text">Направление: <%= link_to  "#{@course.subject.name}",subject_path(@course.subject.id)%></p>
     <a href="<%= edit_course_url(@course.id) %>" class="card-link">Edit</a>
     <a class="card-link"><%= link_to  "Delete", course_path(@course.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить курс?'} %></a>
   </div>
