@@ -14,7 +14,11 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
   def index
-    @courses = Course.all.paginate(:page => params[:page],per_page:1)
+    if params[:s] != nil
+      @courses = Course.search_by_name(params[:s]).paginate(:page => params[:page],per_page:4)
+    else
+      @courses = Course.all.paginate(:page => params[:page],per_page:1)
+    end
   end
   def show
     @course = Course.find_by(id: params[:id])
