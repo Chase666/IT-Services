@@ -13,8 +13,8 @@ class SubjectsController < ApplicationController
       @subject = Subject.new
     end
     def index
-      if params[:s] != nil
-        @subjects = Subject.search_by_name(params[:s]).paginate(:page => params[:page],per_page:4)
+      if params[:q] != nil
+        @subjects = Subject.search_by_name(params[:q]).paginate(:page => params[:page],per_page:4)
       else
         @subjects = Subject.all.paginate(:page => params[:page],per_page:1)
       end

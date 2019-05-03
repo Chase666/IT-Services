@@ -1,8 +1,8 @@
 <div class="form-wrapper">
-  <%= form_tag companies_path, method: :get do %>
-    <%= text_field_tag 's', params[:s], placeholder: "Поиск по компаниям" %>
-    <%= submit_tag 'Поиск' %>
-  <% end %>
+  <form action="<%= companies_path %>" method="get">
+    <%= text_field_tag :q, params[:q], placeholder: "Поиск по компаниям"  %>
+    <%= submit_tag "Поиск", :name => nil %>
+  </form>
 </div>
 <h1>Все компании</h1>
 <% @companies.each do |company| %>

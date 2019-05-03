@@ -13,8 +13,8 @@ class CompaniesController < ApplicationController
     @company = Company.new
   end
   def index
-    if params[:s] != nil
-      @companies = Company.search_by_name(params[:s]).paginate(:page => params[:page],per_page:4)
+    if params[:q] != nil
+      @companies = Company.search_by_name(params[:q]).paginate(:page => params[:page],per_page:4)
     else
       @companies = Company.all.paginate(:page => params[:page],per_page:4)
     end
