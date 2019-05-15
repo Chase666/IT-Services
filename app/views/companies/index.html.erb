@@ -3,6 +3,7 @@
     <%= text_field_tag :q, params[:q], placeholder: "Поиск по компаниям"  %>
     <%= submit_tag "Поиск", :name => nil %>
   </form>
+  <%= link_to 'Очистить', companies_path %>
 </div>
 <h1>Все компании</h1>
 <% @companies.each do |company| %>
