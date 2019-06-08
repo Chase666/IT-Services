@@ -10,7 +10,9 @@
     <p class="card-text">Цена курса: <%= @course.price%>₽</p>
     <p class="card-text">Компания: <%= link_to  "#{@course.company.name}",company_path(@course.company.id)%></p>
     <p class="card-text">Направление: <%= link_to  "#{@course.subject.name}",subject_path(@course.subject.id)%></p>
-    <a href="<%= edit_course_url(@course.id) %>" class="card-link">Edit</a>
-    <a class="card-link"><%= link_to  "Delete", course_path(@course.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить курс?'} %></a>
+    <% if current_user %>
+      <a href="<%= edit_course_url(@course.id) %>" class="card-link">Edit</a>
+      <a class="card-link"><%= link_to  "Delete", course_path(@course.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить курс?'} %></a>
+    <% end %>
   </div>
 </div>

@@ -8,8 +8,10 @@
     <p class="card-text">Почта компании: <%= @company.email %></p>
     <p class="card-text">Организация: <%= @company.organization_name %></p>
     <p class="card-text">Веб-сайт: <%= @company.website %></p>
-    <a href="<%= edit_company_url(@company.id) %>" class="card-link">Edit</a>
-    <a class="card-link"><%= link_to  "Delete", company_path(@company.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить компанию?'} %></a>
+    <% if current_user %>
+      <a href="<%= edit_company_url(@company.id) %>" class="card-link">Edit</a>
+      <a class="card-link"><%= link_to  "Delete", company_path(@company.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить компанию?'} %></a>
+    <% end %>
   </div>
 </div>
 <p> </p>

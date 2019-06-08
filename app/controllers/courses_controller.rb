@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!,except: [:show,:index]
   def create
     @course = Course.new(course_params)
     @course.save

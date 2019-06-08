@@ -5,8 +5,10 @@
     <p class="card-text"><%= image_tag @subject.avatar.url(:default) %></p>
     <p class="card-text">Направление: <%= @subject.name%></p>
     <p class="card-text">О направлении: <%= @subject.description%></p>
-    <a href="<%= edit_subject_path(@subject.id) %>" class="card-link">Edit</a>
-    <a class="card-link"><%= link_to  "Delete", subject_path(@subject.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить направление?'} %></a>
+    <% if current_user %>
+      <a href="<%= edit_subject_path(@subject.id) %>" class="card-link">Edit</a>
+      <a class="card-link"><%= link_to  "Delete", subject_path(@subject.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить направление?'} %></a>
+    <% end %>
   </div>
 </div>
 <p> </p>

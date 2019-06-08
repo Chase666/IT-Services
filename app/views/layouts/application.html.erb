@@ -20,19 +20,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="<%=new_subject_path%>">Новое направление</a>
-        <a class="nav-item nav-link" href="<%=new_course_path%>">Новый курс</a>
-        <a class="nav-item nav-link" href="<%=new_company_path%>">Новая компания</a>
         <a class="nav-item nav-link" href="<%=subjects_path%>">Все направления</a>
         <a class="nav-item nav-link" href="<%=courses_path%>">Все курсы</a>
         <a class="nav-item nav-link" href="<%=companies_path%>">Все компании</a>
         <a class="nav-item nav-link" href="/about">О проекте</a>
+        <% if current_user %>
+          <a class="nav-item nav-link" href="<%=new_subject_path%>">Новое направление</a>
+          <a class="nav-item nav-link" href="<%=new_course_path%>">Новый курс</a>
+          <a class="nav-item nav-link" href="<%=new_company_path%>">Новая компания</a>
+          <a class="nav-item nav-link" <%=link_to 'Выйти', destroy_user_session_path,method: :delete %></a>
+        <% else %>
+          <a class="nav-item nav-link" href="/users/sign_in">Войти</a>
+          <a class="nav-item nav-link" href="/users/sign_up">Зарегистрироваться</a>
+        <% end %>
       </div>
     </div>
   </nav>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <%= render 'layouts/alerts' %>
   <%= yield %>
 
   </body>

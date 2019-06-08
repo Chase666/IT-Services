@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_action :authenticate_user!,except: [:show,:index,:home]
     def create
       @subject = Subject.new(subject_params)
       @subject.save

@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!,except: [:show,:index]
   def create
     @company = Company.new(company_params)
     @company.save
