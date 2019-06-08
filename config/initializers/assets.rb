@@ -1,5 +1,5 @@
 # Be sure to restart your server when you modify this file.
-config.assets.compile = true
+Rails.application.config.assets.compile = true
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
