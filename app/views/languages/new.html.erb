@@ -1,0 +1,8 @@
+<div class="form-style-8">
+  <h2>Создать новый продукт</h2>
+  <%= form_for :language, url: new_language_path do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Описание<%= form.text_field :description %></p>
+    <%= form.submit "Создать продукт"%>
+  <% end %>
+</div>

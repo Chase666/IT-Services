@@ -7,5 +7,6 @@ class Course < ApplicationRecord
   #validates :rating, numericality: {  greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
   belongs_to :company
   belongs_to :subject
+  has_and_belongs_to_many :languages
   pg_search_scope :search_by_name, against: [:name]
 end

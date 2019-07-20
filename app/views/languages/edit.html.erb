@@ -1,0 +1,8 @@
+<div class="form-style-8">
+  <h2>Редактировать продукт</h2>
+  <%= form_for(@language)do |form| %>
+    <p>Название<%= form.text_field :name %></p>
+    <p>Описание<%= form.text_field :description %></p>
+    <%= form.submit %>
+  <% end %>
+</div>

@@ -23,13 +23,16 @@
         <a class="nav-item nav-link" href="<%=subjects_path%>">Все направления</a>
         <a class="nav-item nav-link" href="<%=courses_path%>">Все курсы</a>
         <a class="nav-item nav-link" href="<%=companies_path%>">Все компании</a>
-        <a class="nav-item nav-link" href="/about">О проекте</a>
+        <a class="nav-item nav-link" href="<%=languages_path%>">Все продукты</a>
         <% if current_user %>
           <a class="nav-item nav-link" href="<%=new_subject_path%>">Новое направление</a>
           <a class="nav-item nav-link" href="<%=new_course_path%>">Новый курс</a>
           <a class="nav-item nav-link" href="<%=new_company_path%>">Новая компания</a>
+          <a class="nav-item nav-link" href="<%=new_language_path%>">Новый продукт</a>
+          <a class="nav-item nav-link" href="/about">О проекте</a>
           <a class="nav-item nav-link" <%=link_to 'Выйти', destroy_user_session_path,method: :delete %></a>
         <% else %>
+          <a class="nav-item nav-link" href="/about">О проекте</a>
           <a class="nav-item nav-link" href="/users/sign_in">Войти</a>
           <a class="nav-item nav-link" href="/users/sign_up">Зарегистрироваться</a>
         <% end %>

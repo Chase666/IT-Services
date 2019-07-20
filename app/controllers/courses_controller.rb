@@ -3,7 +3,6 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.save
-
     if @course.errors.any?
       render :'courses/new'
     else
@@ -15,7 +14,7 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
   def index
-    if params[:q] != nil
+    if params[:q]
       @courses = Course.search_by_name(params[:q]).paginate(:page => params[:page],per_page:4)
     else
       @courses = Course.all.paginate(:page => params[:page],per_page:1)
@@ -23,6 +22,7 @@ class CoursesController < ApplicationController
   end
   def show
     @course = Course.find_by(id: params[:id])
+    @course_languages = Language.where(course_id: [@course.id])
     if @course.nil?
       redirect_to courses_path
     end
@@ -48,6 +48,6 @@ class CoursesController < ApplicationController
   end
   private
     def course_params
-    params.require(:course).permit(:name,:info,:price,:total_lessons,:company_id,:subject_id)
+    params.require(:course).permit(:name,:info,:price,:total_lessons,:company_id,:subject_id,:language_ids)
     end
 end

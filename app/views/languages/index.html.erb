@@ -1,0 +1,9 @@
+<h1>Все продукты</h1>
+<% @languages.each do |language| %>
+  <div class="card" style="width: 24.5rem;">
+    <div class="card-body">
+      <p class="card-text"><%= link_to language.name,language_path(language)%></p>
+      <p class="card-text"><%= language.description%></p>
+    </div>
+  </div>
+<% end %>

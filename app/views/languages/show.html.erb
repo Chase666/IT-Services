@@ -1,0 +1,13 @@
+<p> </p>
+<div class="card" style="width: 24.5rem;">
+  <div class="card-body">
+    <h4 class="card-title">О продукте</h4>
+    <p class="card-text">Продукт: <%= @language.name%></p>
+    <p class="card-text">О продукте: <%= @language.description%></p>
+    <% if current_user %>
+      <a href="<%= edit_language_path(@language.id) %>" class="card-link">Edit</a>
+      <a class="card-link"><%= link_to  "Delete", language_path(@language.id), method: :delete, data: {confirm: 'Вы уверены,что хотите удалить продукт?'} %></a>
+    <% end %>
+  </div>
+</div>
+<p> </p>

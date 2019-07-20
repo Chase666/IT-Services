@@ -7,6 +7,7 @@
     <p>Кол-во уроков<%= form.text_field :total_lessons %></p>
     <p>Компания<%= form.collection_select :company_id, Company.order(:name),:id,:name %></p>
     <p>Направление<%= form.collection_select :subject_id, Subject.order(:name),:id,:name %></p>
+    <p>Продукт<%= form.collection_select :language_ids, Language.order(:name),:id,:name,{:multiple => true} %></p>
     <%= form.submit "Создать курс"%>
   <% end %>
 </div>
