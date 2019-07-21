@@ -22,7 +22,6 @@ class CoursesController < ApplicationController
   end
   def show
     @course = Course.find_by(id: params[:id])
-    @course_languages = Language.where(course_id: [@course.id])
     if @course.nil?
       redirect_to courses_path
     end

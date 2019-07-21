@@ -11,8 +11,8 @@
     <p class="card-text">Компания: <%= link_to  "#{@course.company.name}",company_path(@course.company.id)%></p>
     <p class="card-text">Направление: <%= link_to  "#{@course.subject.name}",subject_path(@course.subject.id)%></p>
     <p class="card-text">Продукты:</p>
-      <% @course_languages.each do |f| %>
-        <p> <%= f.name %> </p>
+      <% @course.languages.each do |f| %>
+        <p> <%= link_to f.name,language_path(f) %> </p>
       <% end %>
     <% if current_user %>
       <a href="<%= edit_course_url(@course.id) %>" class="card-link">Edit</a>
